@@ -11,7 +11,7 @@ services:
     depends_on:
       - "stubby"
     ports:
-      - "127.0.0.1:53:53/udp"
+      - "53:53/udp"
     networks:
       - dns
     volumes:
