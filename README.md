@@ -1,8 +1,11 @@
 # Unbound and Stubby Docker Images
 
-## Fork of https://github.com/MatthewVance/stubby-docker
+## Fork of MatthewVance/stubby-docker
 
-This fork uses debian:stable-slim as base and only debian provided binary packages. stubby configuration differs from original with google, quad9 and cloudflare upstream dns -servers. dns requests are done in round robin order.
+ * https://github.com/MatthewVance/stubby-docker
+ * This fork uses debian:stable-slim as base and only debian provided binary packages
+ * stubby configuration differs from original with google, quad9 and cloudflare upstream dns -servers
+ * dns requests are done in round robin order.
 
 ## What does this do?
 
