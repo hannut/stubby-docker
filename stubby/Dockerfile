@@ -6,8 +6,8 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update \
  && apt-get -y full-upgrade \
  && apt-get install -y --no-install-recommends \
-	stubby \
-	ca-certificates \
+    stubby \
+    ca-certificates \
     ldnsutils \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* \
