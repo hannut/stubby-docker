@@ -24,13 +24,13 @@ stubby_port=@8053
 stubby=$stubby_ip$stubby_port
 
 # Use this default unbound.conf unless a user mounts a custom one:
-if [ ! -f /opt/unbound/etc/unbound/unbound.conf ]; then
+if [ ! -f /unbound.conf ]; then
 sed \
     -e "s/@MSG_CACHE_SIZE@/${msg_cache_size}/" \
     -e "s/@RR_CACHE_SIZE@/${rr_cache_size}/" \
     -e "s/@THREADS@/${threads}/" \
     -e "s/@STUBBY@/${stubby}/" \
-    > /opt/unbound/etc/unbound/unbound.conf << EOT
+    > /unbound.conf << EOT
 server:
   verbosity: 1
   num-threads: @THREADS@
@@ -42,7 +42,7 @@ server:
   cache-max-ttl: 86400
   do-daemonize: no
   deny-any: yes
-  username: "_unbound"
+  username: "unbound"
   log-queries: no
   hide-version: yes
   hide-identity: yes
@@ -62,9 +62,9 @@ server:
   ratelimit: 1000
   rrset-roundrobin: yes
   minimal-responses: yes
-  chroot: "/opt/unbound/etc/unbound"
-  directory: "/opt/unbound/etc/unbound"
-  auto-trust-anchor-file: "var/root.key"
+  #chroot: "/opt/unbound/etc/unbound"
+  #directory: "/opt/unbound/etc/unbound"
+  #auto-trust-anchor-file: "var/root.key"
   num-queries-per-thread: 4096
   outgoing-range: 8192
   msg-cache-size: @MSG_CACHE_SIZE@
@@ -96,11 +96,6 @@ remote-control:
 EOT
 fi
 
-mkdir -p /opt/unbound/etc/unbound/dev && \
-cp -a /dev/random /dev/urandom /opt/unbound/etc/unbound/dev/
+/usr/lib/unbound/package-helper root_trust_anchor_update
 
-mkdir -p -m 700 /opt/unbound/etc/unbound/var && \
-chown _unbound:_unbound /opt/unbound/etc/unbound/var && \
-/opt/unbound/sbin/unbound-anchor -a /opt/unbound/etc/unbound/var/root.key
-
-exec /opt/unbound/sbin/unbound -d -c /opt/unbound/etc/unbound/unbound.conf
+exec /usr/sbin/unbound -d -c /unbound.conf

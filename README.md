@@ -1,5 +1,9 @@
 # Unbound and Stubby Docker Images
 
+## Fork of https://github.com/MatthewVance/stubby-docker
+
+This fork uses debian:stable-slim as base and only debian provided binary packages. stubby configuration differs from original with google, quad9 and cloudflare upstream dns -servers. dns requests are done in round robin order.
+
 ## What does this do?
 
 This allows you to run a Stubby for better DNS over TLS support than Unbound provides without losing the performance benefits of having a local caching DNS resolver.
