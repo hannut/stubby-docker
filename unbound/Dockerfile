@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update \
  && apt-get -y full-upgrade \
  && apt-get install -y --no-install-recommends \
-	unbound \
+    unbound \
     ldnsutils \
     iputils-ping \
  && apt-get clean \
