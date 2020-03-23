@@ -8,6 +8,7 @@
  * dns requests are done in round robin order
  * I made this primarily for my own use, might be useful for others
  * `git clone https://github.com/hannut/stubby-docker.git && cd stubby-docker && docker-compose up -d` should be enough to get started
+ * tested and working unmodified on Raspbian Buster 2020-03
 
 ## What does this do?
 
