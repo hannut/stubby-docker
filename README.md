@@ -7,7 +7,7 @@
  * stubby configuration differs from original with google, quad9 and cloudflare upstream dns -servers
  * dns requests are done in round robin order
  * I made this primarily for my own use, might be useful for others
- * `git clone` and `docker-compose up -d` should be enough to get started
+ * `git clone https://github.com/hannut/stubby-docker.git && cd stubby-docker && docker-compose up -d` should be enough to get started
 
 ## What does this do?
 
