@@ -6,7 +6,8 @@
  * This fork uses debian:stable-slim as base and only debian provided binary packages
  * stubby configuration differs from original with google, quad9 and cloudflare upstream dns -servers
  * dns requests are done in round robin order
- * I made this primarily for my own use. might be useful for others
+ * I made this primarily for my own use, might be useful for others
+ * `git clone` and `docker-compose up -d` should be enough to get started
 
 ## What does this do?
 
