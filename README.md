@@ -1,6 +1,6 @@
 # Unbound and Stubby Docker Images
 
-## Fork of MatthewVance/stubby-docker
+## forked from MatthewVance/stubby-docker
 
  * https://github.com/MatthewVance/stubby-docker
  * This fork uses debian:stable-slim as base and only debian provided binary packages
